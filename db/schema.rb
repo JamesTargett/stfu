@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131122023048) do
+ActiveRecord::Schema.define(version: 20131122225824) do
 
   create_table "characters", force: true do |t|
     t.string   "name"
-    t.string   "date_of_birth"
     t.string   "height"
     t.string   "weight"
     t.string   "wrestling_style"
@@ -23,6 +22,7 @@ ActiveRecord::Schema.define(version: 20131122023048) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "age"
   end
 
   add_index "characters", ["user_id"], name: "index_characters_on_user_id"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20131122023048) do
     t.integer  "character2_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "character1"
+    t.string   "character2"
   end
 
   add_index "matches", ["character1_id"], name: "index_matches_on_character1_id"

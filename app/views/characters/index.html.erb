@@ -1,0 +1,4 @@
+<h1>Roster</h1>
+<% @characters.each do |character| %>
+  <p><%= character.name %> <%= character.age %> <%= character.height %> <%= character.weight %> <%= character.wrestling_style %> <%= character.finisher %> </p>
+<% end %>

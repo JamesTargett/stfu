@@ -1,0 +1,4 @@
+<h1>This Week's Event</h1>
+<% @matches.each do |match| %>
+  <h3><%= link_to match.title, match_roleplays_path(match) %></h3>
+<% end %>

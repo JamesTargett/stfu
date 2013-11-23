@@ -1,4 +1,22 @@
 Stfu::Application.routes.draw do
+  # /matches/:id
+  resources :matches do
+    resources :roleplays
+  end
+  # POST /matches/:match_id/roleplays
+  # nested resources ****
+  # /characters for public viewing
+  resources :characters
+
+  # /my/characters/ for creating characters CRUD
+  namespace :my do
+    resources :characters # generate as rails g controller my/characters
+  end
+
+  #resources :about
+  get 'about' => 'about#index'
+  root to: 'matches#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
