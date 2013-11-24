@@ -6,12 +6,14 @@ Stfu::Application.routes.draw do
   # POST /matches/:match_id/roleplays
   # nested resources ****
   # /characters for public viewing
+  resources :users
   resources :characters
 
   # /my/characters/ for creating characters CRUD
   namespace :my do
     resources :characters # generate as rails g controller my/characters
   end
+  resources :sessions
 
   #resources :about
   get 'about' => 'about#index'
