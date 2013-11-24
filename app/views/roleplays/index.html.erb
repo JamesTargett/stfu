@@ -1,7 +1,20 @@
-<h1>Hello</h1>
-<p>This is where character's trash talk each other.</p>
+
+<h1><%= @match.title %></h1>
 
 <% @roleplays.each do |roleplay| %>
-  <h3><%= roleplay.message %></h3>
+  <h3><%= roleplay.character.name %></h3>
+  <p><%= roleplay.message %></p>
 <% end %>
+
+<%= form_for [@match, @roleplay] do |f| %>
+  <div>
+    <%= f.label "message" %><br>
+    <%= f.text_field "message" %>
+  </div>
+  <div>
+    <%= f.submit "Submit" %>
+  </div>
+
+<% end %>
+
 
