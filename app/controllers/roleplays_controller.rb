@@ -1,11 +1,15 @@
 class RoleplaysController < ApplicationController
 
+  before_filter :load_match 
+
   def index
-    @roleplays = Roleplay.all
+    @roleplays = @match.roleplays
   end
 
-  def roleplays
+protected
 
+  def load_match
+    @match = Match.find(params[:match_id])
   end
 
 end
