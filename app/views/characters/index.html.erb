@@ -1,43 +1,17 @@
 <h1>Roster</h1>
+
+<table>
+  <thead>
+    <td>Name</td>
+    <td>Age</td>
+    <td>Height</td>
+    <td>Weight</td>
+    <td>Wrestling Style</td>
+    <td>Finisher</td>
+  </thead>
+</table>
 <% @characters.each do |character| %>
-  <p><%= character.name %> <%= character.age %> <%= character.height %> <%= character.weight %> <%= character.wrestling_style %> <%= character.finisher %> </p>
+  <p><%= character.name %> <%= character.age %> <%= character.height %> <%= character.weight %> <%= character.wrestling_style %> <%= character.finisher %></p>
 <% end %>
 
-<%= form_for @character do |f| %>
-  <% if @character.errors.any? %>
-    <div>
-      <%= pluralize(@character.errors.count, "error") %>
-      prevented the character from being created:
-      <ul>
-        <% @character.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div>
-    <%= f.label "name" %><br>
-    <%= f.text_field "name" %>
-  </div>
-  <div>
-    <%= f.label "age" %><br>
-    <%= f.text_field "age" %>
-  </div>
-  <div>
-    <%= f.label "height" %><br>
-    <%= f.text_field "height" %>
-  </div>
-  <div>
-    <%= f.label "weight" %><br>
-    <%= f.text_field "weight" %>
-  </div>
-  <div>
-    <%= f.label "wrestling_style" %><br>
-    <%= f.text_field "wrestling_style" %>
-  </div>
-  <div>
-    <%= f.label "finisher" %><br>
-    <%= f.text_field "finisher" %>
-  </div>
-  <div><%= f.submit "Submit" %></div>
-<% end %> 
+<h2 class="match_heading"><%= link_to "Create a Character", new_character_path %></h1>

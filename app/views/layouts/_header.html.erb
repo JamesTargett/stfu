@@ -1,17 +1,29 @@
 <header>
+  <nav>
     <div class="floatleft clear">
       <%= image_tag("megaphone_logo.jpg", alt: "Smash Talk Federation United", width: 300, height: 259) %>
     </div>
-  <nav>
-    <div class="button floatleft nav"><%= link_to "Characters", characters_path  %></div> 
-    <div class="button floatleft nav"><%= link_to "About", about_path %></div>
-    <div class="button floatright nav"><%= link_to "Sign Up", new_user_path %></div> 
-    <div class="button floatright nav"><%= link_to "Sign In", new_session_path %></div>
+
+    <div class="button floatleft"><%= link_to "Characters", characters_path %></div> 
+    <div class="button floatleft"><%= link_to "About", about_path %></div>
+    <div class="button floatright"><%= link_to "Sign Up", new_user_path %></div> 
+    <div class="button floatright"><%= link_to "Sign In", new_session_path %></div>
     <br class="clear">
     <div class="floatright">
       <h1 class="front_heading">STFU!</h1>
       <h3 class="front_subheading">Smash Talk Federation Uncensored</h3>
     </div>
-
+    <div class="home_button floatleft clear">
+      <%= link_to "Home", matches_path %>
+    </div>
+    <div class="floatleft clear">
+      <small>
+        <% if current_user %>
+          Signed in as <%= current_user.username %> (<%= link_to "Log out", session_path("current"), method: :delete %>)
+        <% else %>
+          <%= link_to "Log In", new_session_path %> | <%= link_to "Sign Up", new_user_path %>
+        <% end %>
+      </small>
+    </div>
   </nav>
 </header>

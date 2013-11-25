@@ -18,7 +18,7 @@ class Character < ActiveRecord::Base
   validates :wrestling_style,
     presence: true
 
-    validates :finisher,
-      presence: true
+  validates :finisher,
+    presence: true
 
 end

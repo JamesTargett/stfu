@@ -12,7 +12,7 @@ class CharactersController < ApplicationController
     @character = Character.new(character_params)
 
     if @character.save
-      redirect_to matches_path, notice: "Your character has been created."
+      redirect_to characters_path, notice: "Your character has been created."
     else
       render :new
     end
