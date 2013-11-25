@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>STFU - Smash Talk Federation United</title>
+    <title>STFU! - Smash Talk Federation Uncensored</title>
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div id="wrapper">
-    <%= render 'layouts/header' %>
-
-    <%= yield %>
-
+    <div class="wrapper">
+      <%= render 'layouts/header' %>
+      <div class="mini_wrapper">
+      <%= yield %>
+      </div>
     </div>
   </body>
 </html>

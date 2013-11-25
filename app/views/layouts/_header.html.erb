@@ -1,9 +1,17 @@
 <header>
-  <h1>STFU</h1>
+    <div class="floatleft clear">
+      <%= image_tag("megaphone_logo.jpg", alt: "Smash Talk Federation United", width: 300, height: 259) %>
+    </div>
   <nav>
-    <%= link_to "Characters", characters_path  %> 
-    <%= link_to "About", about_path %> 
-    <%= link_to "Sign Up", new_user_path %> 
-    <%= link_to "Sign In", new_session_path %>
+    <div class="button floatleft nav"><%= link_to "Characters", characters_path  %></div> 
+    <div class="button floatleft nav"><%= link_to "About", about_path %></div>
+    <div class="button floatright nav"><%= link_to "Sign Up", new_user_path %></div> 
+    <div class="button floatright nav"><%= link_to "Sign In", new_session_path %></div>
+    <br class="clear">
+    <div class="floatright">
+      <h1 class="front_heading">STFU!</h1>
+      <h3 class="front_subheading">Smash Talk Federation Uncensored</h3>
+    </div>
+
   </nav>
 </header>
