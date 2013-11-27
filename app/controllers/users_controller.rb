@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      redirect_to matches_path, notice: "Welcome aboard!"
+      redirect_to new_character_path, notice: "Great! You should create a character next."
     else
       render :new
     end

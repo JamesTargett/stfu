@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :character do
-    name "Punchline"
+    sequence(:name) {|i| "Punchline-#{i}"}
     age "34"
     height "6'2"
     weight "220lbs"
     wrestling_style "Hardcore"
-    finisher "Standup Routine"
+    sequence(:finisher) {|i| "Standup Routine-#{i}"}
   end
 end
