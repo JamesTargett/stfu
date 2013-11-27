@@ -9,8 +9,9 @@ describe Character do
     pending "should fail if any field is incomplete"
     
     it "should fail if character name is already being used" do
-      character1 = FactoryGirl.build :character, name: "Andro"
+      character1 = FactoryGirl.create :character, name: "Andro"
       character2 = FactoryGirl.build :character, name: "Andro"
+      expect(character2.save).to eq(false)
     end
     
     pending "should fail if finisher is already being used"

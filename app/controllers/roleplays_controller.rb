@@ -13,8 +13,13 @@ class RoleplaysController < ApplicationController
 
   def create
     @roleplay = @match.roleplays.new(roleplay_params)
-    # FIXME: this is temporary until we have login
-    @roleplay.character = @match.character1 
+    
+    if current_user.owns_character?(@match.character1)
+      @roleplay.character = @match.character1 
+    elsif current_user.owns_character?(@match.character2)
+      @roleplay.character = @match.character2
+    end
+
     if @roleplay.save
       redirect_to match_roleplays_path, notice: "roleplay was submitted successfully!"
     else

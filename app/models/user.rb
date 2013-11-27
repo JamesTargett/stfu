@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_one :character
+  has_many :characters
   has_many :matches, through: :character
   has_many :roleplays, through: :character
   has_secure_password
@@ -17,5 +17,9 @@ class User < ActiveRecord::Base
   validates :password,
     presence: true,
     length: { in: 6..20 }, on: :create
+
+  def owns_character?(character)
+    characters.include?(character)
+  end
 
 end

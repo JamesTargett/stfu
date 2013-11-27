@@ -11,9 +11,9 @@
 # Character.destroy_all
 # Match.destroy_all
 
-c1 = Character.create!(name: "Main Event", age: "64", height: "6'4", weight: "220 lbs", wrestling_style: "Brawler", finisher: "The American Dream" )
-c2 = Character.create!(name: "Made in China", age: "28", height: "6'2", weight: "228 lbs", wrestling_style: "High Flying", finisher: "Counterfeit" )
-c3 = Character.create!(name: "Fuerza", age: "24", height: "5'10", weight: "180 lbs", wrestling_style: "Junior Heavyweight", finisher: "Translation" )
+c1 = Character.create!(name: "Main Event", age: "64", height: "6'4", weight: "220 lbs", wrestling_style: "Brawler", finisher: "The American Dream")
+c2 = Character.create!(name: "Made in China", age: "28", height: "6'2", weight: "228 lbs", wrestling_style: "High Flying", finisher: "Counterfeit")
+c3 = Character.create!(name: "Fuerza", age: "24", height: "5'10", weight: "180 lbs", wrestling_style: "Junior Heavyweight", finisher: "Translation")
 c4 = Character.create!(name: "Joe Blow", age: "34", height: "6'2", weight: "230 lbs", wrestling_style: "Spot Wrestling", finisher: "Untitled")
 c5 = Character.create!(name: "Roids", age: "28", height: "6'5", weight: "252 lbs", wrestling_style: "Hardcore", finisher: "Juiced Up")
 c6 = Character.create!(name: "Asylum", age: "22", height: "6'8", weight: "260 lbs", wrestling_style: "Hardcore", finisher: "A Lobotomy")
