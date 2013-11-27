@@ -9,9 +9,17 @@
     <td>Wrestling Style</td>
     <td>Finisher</td>
   </thead>
+
+  <% @characters.each do |character| %>
+  <tr>
+    <td><%= character.name %></td>
+    <td><%= character.age %></td>
+    <td><%= character.height %></td>
+    <td><%= character.weight %></td>
+    <td><%= character.wrestling_style %></td>
+    <td><%= character.finisher %></td>
+  </tr>
+  <% end %>
 </table>
-<% @characters.each do |character| %>
-  <p><%= character.name %> <%= character.age %> <%= character.height %> <%= character.weight %> <%= character.wrestling_style %> <%= character.finisher %></p>
-<% end %>
 
 <h2 class="match_heading"><%= link_to "Create a Character", new_character_path %></h1>
