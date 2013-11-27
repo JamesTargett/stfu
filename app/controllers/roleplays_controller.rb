@@ -16,7 +16,7 @@ class RoleplaysController < ApplicationController
     # FIXME: this is temporary until we have login
     @roleplay.character = @match.character1 
     if @roleplay.save
-      redirect_to matches_path, notice: "roleplay was submitted successfully!"
+      redirect_to match_roleplays_path, notice: "roleplay was submitted successfully!"
     else
       render :new
     end

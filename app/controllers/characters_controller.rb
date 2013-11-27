@@ -10,6 +10,7 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new(character_params)
+    @character.user = current_user
 
     if @character.save
       redirect_to characters_path, notice: "Your character has been created."

@@ -4,7 +4,8 @@ class Character < ActiveRecord::Base
   has_many :matches
 
   validates :name,
-    presence: true
+    presence: true,
+    uniqueness: true
 
   validates :age,
     presence: true
@@ -19,6 +20,7 @@ class Character < ActiveRecord::Base
     presence: true
 
   validates :finisher,
-    presence: true
+    presence: true,
+    uniqueness: true
 
 end

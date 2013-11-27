@@ -30,8 +30,9 @@ gem 'jbuilder', '~> 1.2'
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 
-# Use factory_girl as a fixtures replacement 
 gem 'factory_girl_rails'
+
+gem 'valid_email'
 
 group :development do
   gem 'quiet_assets'
