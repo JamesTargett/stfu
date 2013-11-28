@@ -7,10 +7,6 @@ class RoleplaysController < ApplicationController
     @roleplay = Roleplay.new # not be nil
   end
 
-  def new
-    @roleplay = Roleplay.new
-  end
-
   def create
     @roleplay = @match.roleplays.new(roleplay_params)
     

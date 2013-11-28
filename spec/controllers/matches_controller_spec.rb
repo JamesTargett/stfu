@@ -26,7 +26,6 @@ describe MatchesController do
   describe "GET 'show'" do
     it "fails to return an individual match" do
       get :show, id: 3
-
       expect(response).to redirect_to matches_path
     end
   end
