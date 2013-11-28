@@ -8,21 +8,20 @@ describe CharactersController do
     it "returns http success" do
       characters = [FactoryGirl.create(:character), FactoryGirl.create(:character)]
       get :index
-      puts(response.body)
       expect(response).to be_success
       expect(response).to render_template("index")
       expect(assigns(:characters)).to match_array(characters)
     end
   end
 
-  # describe "GET 'new'" do
-  #   it "returns http success if character created " do
-  #     get :new
-  #     expect(response).to be_success
-  #     expect(response).to render_template("new")
-  #     expect(assigns)
-  #   end
-  # end
+  describe "GET 'new'" do
+    it "returns http success" do
+      get :new
+      expect(response).to be_success
+      expect(response).to render_template("new")
+      expect(assigns(:character)).to be_a_new(Character)
+    end
+  end
 
   describe "POST 'create'" do
     it "creates a new character" do

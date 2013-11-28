@@ -1,6 +1,6 @@
-# Read about factories at https://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
   factory :match do
+    association :character1, factory: :character
+    association :character2, factory: :character
   end
 end
