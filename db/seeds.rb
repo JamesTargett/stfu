@@ -8,8 +8,9 @@
 
 # NOTE: use save! or create! in seeds so that if an issue arises it'll raise an error and stop
 # NOTE2: do a destroy on all objects before creating (rake db:seed)
-# Character.destroy_all
-# Match.destroy_all
+Character.destroy_all
+Match.destroy_all
+Roleplay.destroy_all
 
 c1 = Character.create!(name: "Main Event", age: "64", height: "6'4", weight: "220 lbs", wrestling_style: "Brawler", finisher: "The American Dream")
 c2 = Character.create!(name: "Made in China", age: "28", height: "6'2", weight: "228 lbs", wrestling_style: "High Flying", finisher: "Counterfeit")
