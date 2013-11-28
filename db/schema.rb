@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131125003022) do
+ActiveRecord::Schema.define(version: 20131128211827) do
 
   create_table "characters", force: true do |t|
     t.string   "name"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20131125003022) do
     t.string   "age"
   end
 
-  add_index "characters", ["user_id"], name: "index_characters_on_user_id"
+  add_index "characters", ["user_id"], name: "index_characters_on_user_id", using: :btree
 
   create_table "matches", force: true do |t|
     t.integer  "character1_id"
@@ -34,19 +34,19 @@ ActiveRecord::Schema.define(version: 20131125003022) do
     t.datetime "updated_at"
   end
 
-  add_index "matches", ["character1_id"], name: "index_matches_on_character1_id"
-  add_index "matches", ["character2_id"], name: "index_matches_on_character2_id"
+  add_index "matches", ["character1_id"], name: "index_matches_on_character1_id", using: :btree
+  add_index "matches", ["character2_id"], name: "index_matches_on_character2_id", using: :btree
 
   create_table "roleplays", force: true do |t|
-    t.string   "message"
+    t.text     "message"
     t.integer  "match_id"
     t.integer  "character_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "roleplays", ["character_id"], name: "index_roleplays_on_character_id"
-  add_index "roleplays", ["match_id"], name: "index_roleplays_on_match_id"
+  add_index "roleplays", ["character_id"], name: "index_roleplays_on_character_id", using: :btree
+  add_index "roleplays", ["match_id"], name: "index_roleplays_on_match_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username"
