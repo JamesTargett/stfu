@@ -1,16 +1,11 @@
 Stfu::Application.routes.draw do
-  # /matches/:id
-  resources :matches do
-    resources :roleplays
-  end
-  # POST /matches/:match_id/roleplays
-  # nested resources ****
-  # /characters for public viewing
-  resources :users
-  resources :characters
-  resources :sessions
 
-  #resources :about
+  resources :matches, only: [:index, :show] do
+    resources :roleplays, only: [:index, :create] 
+  end
+  resources :users, only: [:new, :create]
+  resources :characters, only: [:index, :new, :create]
+  resources :sessions, only: [:new, :create, :destroy]
   get 'about' => 'about#index'
   root to: 'matches#index'
 
