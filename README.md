@@ -3,8 +3,6 @@
 ### Introduction
 This was the first completed Ruby on Rails app developed through Lighthouse Labs. It represents the culmination of our learning until now and also marks the half-way point of the program.
 
-Deployed to [Heroku](http://evening-sea-5182.herokuapp.com/)
-
 ### Description
 STFU is a user-driven roleplaying game where users can create one or more characters belonging to a fictional pro wrestling roster. Each week an event card is posted listing matches between involving two or more characters. Leading up to the event date users are responsible for posting roleplays for their respective character and match. The roleplays are then judged by an admin who writes a summary of the fictional match-up and posts results.
 
