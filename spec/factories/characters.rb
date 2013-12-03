@@ -6,5 +6,6 @@ FactoryGirl.define do
     weight "220lbs"
     wrestling_style "Hardcore"
     sequence(:finisher) {|i| "Standup Routine-#{i}"}
+    association :match, factory: :match
   end
 end

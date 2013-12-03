@@ -1,15 +1,14 @@
-# require 'spec_helper'
+require 'spec_helper'
 
-# describe SessionsController do
+describe SessionsController do
 
-#   render_views
+  render_views
 
-#   describe "POST 'create'" do
-#     it "returns http success" do
-#       get 'index'
-#       expect(response).to be_success
-#       expect(response.body).to match /Hello there/m
-#     end
-#   end
+  describe "GET 'new'" do
+    it "displays page with form" do
+      get 'new'
+      expect(response).to be_success
+    end
+  end
 
-# end
+end

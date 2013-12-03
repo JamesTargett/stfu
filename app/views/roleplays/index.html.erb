@@ -1,4 +1,3 @@
-
 <h1><%= @match.title %></h1>
 
 <% @roleplays.each do |roleplay| %>
@@ -6,15 +5,20 @@
   <p><%= roleplay.message %></p>
 <% end %>
 
-<%= form_for [@match, @roleplay] do |f| %>
-  <div>
-    <%= f.label "message" %><br>
-    <%= f.text_field "message" %>
-  </div>
-  <div>
-    <%= f.submit "Submit" %>
-  </div>
+<% if current_user.nil? %>
+  <h1>Login if you have something to say.</h1>
+<% elsif current_user.owns_character?(@match.character1) || current_user.owns_character?(@match.character2) %>
+  <%= form_for [@match, @roleplay] do |f| %>
+    <div>
+      <%= f.label "message" %><br>
+      <%= f.text_field "message" %>
+    </div>
+    <div>
+      <%= f.submit "Submit" %>
+    </div>
 
+  <% end %>
+<% else %>
+  <h1>You're just a spectator.</h1>
 <% end %>
-
 

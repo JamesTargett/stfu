@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131128211827) do
+ActiveRecord::Schema.define(version: 20131130002759) do
 
   create_table "characters", force: true do |t|
     t.string   "name"
@@ -49,7 +49,6 @@ ActiveRecord::Schema.define(version: 20131128211827) do
   add_index "roleplays", ["match_id"], name: "index_roleplays_on_match_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "username"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at"

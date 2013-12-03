@@ -1,15 +1,14 @@
-# require 'spec_helper'
+require 'spec_helper'
 
-# describe WelcomeController do
+describe AboutController do
 
-#   render_views
+  render_views
 
-#   describe "GET 'index'" do
-#     it "returns http success" do
-#       get 'index'
-#       expect(response).to be_success
-#       expect(response.body).to match /Hello there/m
-#     end
-#   end
+  describe "GET 'index'" do
+    it "displays static about page" do
+      get :index
+      expect(response).to be_success
+    end
+  end
 
-# end
+end

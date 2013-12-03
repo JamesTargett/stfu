@@ -5,7 +5,7 @@ describe CharactersController do
   render_views
 
   describe "GET 'index'" do
-    it "returns http success" do
+    it "displays a list of characters" do
       characters = [FactoryGirl.create(:character), FactoryGirl.create(:character)]
       get :index
       expect(response).to be_success
@@ -15,7 +15,7 @@ describe CharactersController do
   end
 
   describe "GET 'new'" do
-    it "returns http success" do
+    it "displays form for creating a new character" do
       get :new
       expect(response).to be_success
       expect(response).to render_template("new")

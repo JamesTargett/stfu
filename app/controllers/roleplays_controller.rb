@@ -4,7 +4,7 @@ class RoleplaysController < ApplicationController
 
   def index
     @roleplays = @match.roleplays
-    @roleplay = Roleplay.new # not be nil
+    @roleplay = Roleplay.new
   end
 
   def create
@@ -14,6 +14,8 @@ class RoleplaysController < ApplicationController
       @roleplay.character = @match.character1 
     elsif current_user.owns_character?(@match.character2)
       @roleplay.character = @match.character2
+    else 
+    # FIXME: need to have an else alerting user that their character is not assigned to the match 
     end
 
     if @roleplay.save

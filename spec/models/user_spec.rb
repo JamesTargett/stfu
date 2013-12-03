@@ -29,10 +29,8 @@ describe User do
     end
 
     it "should not work if email is already taken by another user" do
-      user1 = FactoryGirl.create :user,
-      email: "fightclub@makeandsellsoap.com"
-      user2 = FactoryGirl.build :user,
-      email: "fightclub@makeandsellsoap.com"
+      user1 = FactoryGirl.create :user, email: "fightclub@makeandsellsoap.com"
+      user2 = FactoryGirl.build :user, email: "fightclub@makeandsellsoap.com"
       expect(user2.save).to eq(false)
     end
 

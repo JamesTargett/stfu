@@ -7,7 +7,12 @@ Stfu::Application.routes.draw do
   resources :characters, only: [:index, :new, :create]
   resources :sessions, only: [:new, :create, :destroy]
   get 'about' => 'about#index'
+  namespace :admin do
+    resources :matches, only: [:new, :create]
+  end
   root to: 'matches#index'
+
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -63,4 +68,3 @@ Stfu::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end

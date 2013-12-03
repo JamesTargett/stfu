@@ -15,5 +15,8 @@ describe RoleplaysController do
     end
   end
 
+    pending "roleplay create fails if no user signed in""assigns roleplays for the correct character"
+    pending "roleplay is created for the correct match"
+    pending "notifies on Roleplay failure"
 end
 
