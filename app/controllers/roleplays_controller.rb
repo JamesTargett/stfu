@@ -3,7 +3,7 @@ class RoleplaysController < ApplicationController
   before_action :load_match 
 
   def index
-    @roleplays = @match.roleplays
+    @roleplays = @match.roleplays.order(:created_at)
     @roleplay = Roleplay.new
   end
 
@@ -14,8 +14,6 @@ class RoleplaysController < ApplicationController
       @roleplay.character = @match.character1 
     elsif current_user.owns_character?(@match.character2)
       @roleplay.character = @match.character2
-    else 
-    # FIXME: need to have an else alerting user that their character is not assigned to the match 
     end
 
     if @roleplay.save

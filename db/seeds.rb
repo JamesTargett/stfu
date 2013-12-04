@@ -11,8 +11,11 @@
 Character.destroy_all
 Match.destroy_all
 Roleplay.destroy_all
+User.destroy_all
 
-c1 = Character.create!(name: "Main Event", age: "64", height: "6'4", weight: "220 lbs", wrestling_style: "Brawler", finisher: "The American Dream")
+u1 = User.create!(email: "tylerd@makeandsellsoap.com", password: "password", password_confirmation: "password")
+
+c1 = Character.create!(name: "Main Event", age: "64", height: "6'4", weight: "220 lbs", wrestling_style: "Brawler", finisher: "The American Dream", user: u1)
 c2 = Character.create!(name: "Made in China", age: "28", height: "6'2", weight: "228 lbs", wrestling_style: "High Flying", finisher: "Counterfeit")
 c3 = Character.create!(name: "Fuerza", age: "24", height: "5'10", weight: "180 lbs", wrestling_style: "Junior Heavyweight", finisher: "Translation")
 c4 = Character.create!(name: "Joe Blow", age: "34", height: "6'2", weight: "230 lbs", wrestling_style: "Spot Wrestling", finisher: "Untitled")
