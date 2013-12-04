@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131204200657) do
+ActiveRecord::Schema.define(version: 20131204225236) do
 
   create_table "characters", force: true do |t|
     t.string   "name"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20131204200657) do
     t.string   "name_on_card"
     t.integer  "expiration_month"
     t.integer  "expiration_year"
+    t.boolean  "paid"
   end
 
 end
