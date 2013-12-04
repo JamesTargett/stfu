@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :characters
   has_many :matches, through: :character
   has_many :roleplays, through: :character
+  has_one :subscription
+  has_many :payments, through: :subscription
   has_secure_password
 
   validates :email,

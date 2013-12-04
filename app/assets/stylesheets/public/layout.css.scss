@@ -1,0 +1,126 @@
+ body {
+  width: 100%;
+  margin: 0;
+  background-color: #fff;
+  color: #292929;
+  font-size: 1.1em;
+  font-family: "Roboto Slab", serif;
+  
+  div.wrapper {
+    width: 960px;
+    margin: 0 auto;
+
+    a:link {
+    color: #fff; background-color: #292929;
+    text-decoration: none;
+    }
+
+    a:visited {
+      color: #fff; background-color: #292929;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #fff; background-color: #292929;
+      text-decoration: underline;
+    }
+
+    a:active {
+      color: #fff; background-color: #292929;
+      text-decoration: underline;
+    }
+
+    h1, h2, h3 {
+      font-family: Slackey, sans-serif;
+    }
+
+    .match_heading {
+      display: block;
+      height: 50px;
+      background: #292929;
+      border-top: none;
+      padding: 15px 5px 5px 5px;
+      margin: 2px auto;
+      color: #fff;
+      text-align: center;
+      font-size: 1.5em;
+      font-family: "Slackey", sans-serif;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    .button {
+      display: block;
+      height: 70px;
+      width: 230px;
+      background: #292929;
+      border: none;
+      padding: 10px 5px 5px 5px;
+      color: #fff;
+      text-align: center;
+      font-size: 1.9em;
+      font-family: Slackey, sans-serif;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    .home_button {
+      display: block;
+      height: 25px;
+      width: 150px;
+      background: #292929;
+      border: none;
+      padding: 5px;
+      margin: -30px 0 0 0;
+      color: #fff;
+      text-align: center;
+      font-size: 1.1em;
+      font-family: Slackey, sans-serif;
+      text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    small {
+      font-family: "Roboto Slab", sans-serif;
+    }
+
+    .front_heading {
+      font-size: 8em;
+      padding: 0;
+      margin: -150px 0 0 0;
+      text-shadow: -5px -5px 0 #fff, 5px -5px 0 #fff, -5px 5px 0 #fff, 5px 5px 0 #fff;
+    }
+
+    .front_subheading {
+      font-size: 1.1em;
+      margin: -50px 0 0 0;
+      text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+    }
+
+    div.mini_wrapper {
+      width: 672px;
+      margin: 0 auto;
+    }
+  }
+}
+
+td {
+  width: 14%;
+}
+
+.centered {
+    text-align: center;
+  }
+
+
+.floatleft {
+  float: left;
+}
+
+.floatright {
+  float: right;
+}
+
+.clear {
+  clear: both;
+}
+
+
+

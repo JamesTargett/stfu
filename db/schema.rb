@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130002759) do
+ActiveRecord::Schema.define(version: 20131204200657) do
 
   create_table "characters", force: true do |t|
     t.string   "name"
@@ -37,6 +37,12 @@ ActiveRecord::Schema.define(version: 20131130002759) do
   add_index "matches", ["character1_id"], name: "index_matches_on_character1_id", using: :btree
   add_index "matches", ["character2_id"], name: "index_matches_on_character2_id", using: :btree
 
+  create_table "payments", force: true do |t|
+    t.integer  "subscription_id"
+    t.integer  "amount_in_cents"
+    t.datetime "paid_at"
+  end
+
   create_table "roleplays", force: true do |t|
     t.text     "message"
     t.integer  "match_id"
@@ -48,11 +54,21 @@ ActiveRecord::Schema.define(version: 20131130002759) do
   add_index "roleplays", ["character_id"], name: "index_roleplays_on_character_id", using: :btree
   add_index "roleplays", ["match_id"], name: "index_roleplays_on_match_id", using: :btree
 
+  create_table "subscriptions", force: true do |t|
+    t.integer "user_id"
+    t.date    "start_date"
+    t.date    "cancel_date"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "card_info"
+    t.string   "name_on_card"
+    t.integer  "expiration_month"
+    t.integer  "expiration_year"
   end
 
 end
