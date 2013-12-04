@@ -16,6 +16,18 @@ class User < ActiveRecord::Base
     presence: true,
     length: { in: 6..20 }, on: :create
 
+  validates :card_info,
+    presence: true, if: :paid?
+
+  validates :name_on_card,
+    presence: true, if: :paid?
+
+  validates :expiration_month,
+    presence: true, if: :paid?
+
+  validates :expiration_year,
+    presence: true, if: :paid?
+
   def owns_character?(character)
     characters.include?(character)
   end

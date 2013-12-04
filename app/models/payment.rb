@@ -1,4 +1,6 @@
-class Match < ActiveRecord::Base
+class Payment < ActiveRecord::Base
   belongs_to :subscription
+
+
 
 end
