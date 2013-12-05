@@ -37,6 +37,8 @@ gem 'factory_girl_rails'
 
 gem 'valid_email'
 
+gem 'stripe'
+
 group :development do
   gem 'quiet_assets'
   gem 'table_print'
