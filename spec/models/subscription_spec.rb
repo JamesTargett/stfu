@@ -1,1 +1,0 @@
-subscription_spec.rb
