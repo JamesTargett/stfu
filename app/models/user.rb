@@ -28,6 +28,9 @@ class User < ActiveRecord::Base
   validates :expiration_year,
     presence: true, if: :subscribed?
 
+  validates :card_token,
+    presence: true, if: :subscribed?
+
 private
 
   def owns_character?(character)
