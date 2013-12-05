@@ -13,6 +13,4 @@ class Subscription < ActiveRecord::Base
     self.start_date = Date.today
   end
 
-  def charge!
-
 end
