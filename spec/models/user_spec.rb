@@ -50,8 +50,43 @@ describe User do
       @user.email = "makesoapfightclub.com"
       expect(@user.save).to eq(false)
     end
+  end
 
+  describe "Credit Card info" do
 
+    it "is valid with all fields properly completed" do
+      expect(@user.save).to eq(true)
+    end
+
+    it "is invalid without card info" do
+      @user = FactoryGirl.build :user, card_info: nil
+      expect(@user.save).to eq(false)
+    end
+
+    it "is invalid without name on card" do
+      @user = FactoryGirl.build :user, name_on_card: nil
+      expect(@user.save).to eq(false)
+    end
+
+    it "is invalid without expiration month" do
+      @user = FactoryGirl.build :user, expiration_month: nil
+      expect(@user.save).to eq(false)
+    end
+
+    it "is invalid without expiration year" do
+      @user = FactoryGirl.build :user, expiration_year: nil
+      expect(@user.save).to eq(false)
+    end
+
+    # it "fails with invalid entry for expiration month" do
+    #   @user = FactoryGirl.build :user, expiration_month: 13
+    #   expect(@user.save).to eq(false)
+    # end
+
+    # it "fails with invalid entry for expiration year" do
+    #   @user = FactoryGirl.build :user, expiration_year: 98
+    #   expect(@user.save).to eq(false)
+    # end
   end
 
 end
