@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131205053900) do
+ActiveRecord::Schema.define(version: 20131205185044) do
 
   create_table "characters", force: true do |t|
     t.string   "name"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20131205053900) do
     t.integer "user_id"
     t.date    "start_date"
     t.date    "cancel_date"
+    t.date    "next_payment_date"
   end
 
   create_table "users", force: true do |t|
