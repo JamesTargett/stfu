@@ -7,6 +7,7 @@ FactoryGirl.define do
     name_on_card "Tyler Durden"
     expiration_month 8
     expiration_year 17
-    subscribed true
+    paid true
+    card_token "cus_34LHBWaFYy7z7B"
   end
 end

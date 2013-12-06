@@ -53,7 +53,6 @@ describe User do
   end
 
   describe "Credit Card info" do
-
     it "is valid with all fields properly completed" do
       expect(@user.save).to eq(true)
     end
@@ -75,6 +74,11 @@ describe User do
 
     it "is invalid without expiration year" do
       @user = FactoryGirl.build :user, expiration_year: nil
+      expect(@user.save).to eq(false)
+    end
+
+    it "is invalid without stripe card token" do
+      @user = FactoryGirl.build :user, card_token: nil
       expect(@user.save).to eq(false)
     end
 
