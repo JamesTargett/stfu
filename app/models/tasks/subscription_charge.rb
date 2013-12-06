@@ -7,7 +7,7 @@ class Tasks::SubscriptionCharge < ActiveRecord::Base
   def charge!
     r = Stripe.charge(1000, self.user.card_token)
     if r.success?
-      next_payment_date = next_payment_date.advance(month: 1)
+      next_payment_date = next_payment_date.advance(months: 1)
       last_payment_date = Date.today
       p = payments.create(amount: 1000).save
     else
