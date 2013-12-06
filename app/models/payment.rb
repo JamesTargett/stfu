@@ -10,4 +10,10 @@ class Payment < ActiveRecord::Base
   validates :paid_at,
   presence: true
 
+private
+
+  def set_paid_at
+    self.paid_at = Date.today
+  end
+
 end
