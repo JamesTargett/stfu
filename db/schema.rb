@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131206010445) do
+ActiveRecord::Schema.define(version: 20131206050729) do
 
   create_table "characters", force: true do |t|
     t.string   "name"
@@ -38,9 +38,9 @@ ActiveRecord::Schema.define(version: 20131206010445) do
   add_index "matches", ["character2_id"], name: "index_matches_on_character2_id", using: :btree
 
   create_table "payments", force: true do |t|
-    t.integer  "subscription_id"
-    t.integer  "amount_in_cents"
-    t.datetime "paid_at"
+    t.integer "subscription_id"
+    t.integer "amount_in_cents"
+    t.date    "paid_at"
   end
 
   create_table "roleplays", force: true do |t|
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20131206010445) do
     t.date    "start_date"
     t.date    "cancel_date"
     t.date    "next_payment_date"
+    t.date    "last_payment_date"
   end
 
   create_table "users", force: true do |t|
