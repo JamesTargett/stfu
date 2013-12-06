@@ -17,19 +17,19 @@ class User < ActiveRecord::Base
     length: { in: 6..20 }, on: :create
 
   validates :card_info,
-    presence: true, if: :subscribed?
+    presence: true, if: :paid?
 
   validates :name_on_card,
-    presence: true, if: :subscribed?
+    presence: true, if: :paid?
 
   validates :expiration_month,
-    presence: true, if: :subscribed?
+    presence: true, if: :paid?
 
   validates :expiration_year,
-    presence: true, if: :subscribed?
+    presence: true, if: :paid?
 
   validates :card_token,
-    presence: true, if: :subscribed?
+    presence: true, if: :paid?
 
 private
 
