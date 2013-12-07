@@ -1,4 +1,4 @@
-FactoryGirl.define do
+UserFactoryGirl.define do
   factory :user do
     sequence(:email) {|i| "fightclub-#{i}@makeandsellsoap.com" }
     password "hitmeashardasyoucan"
