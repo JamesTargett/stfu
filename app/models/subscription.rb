@@ -2,6 +2,8 @@ class Subscription < ActiveRecord::Base
   belongs_to :user
   has_many :payments
 
+  scope :requires_rebill, -> { where("last_payment_date <= :one_month_ago", {one_month_ago: Date.today - 1.month}) }
+
   before_create :set_start_date
 
   validates :start_date,
