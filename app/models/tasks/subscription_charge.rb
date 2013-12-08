@@ -1,5 +1,7 @@
 class Tasks::SubscriptionCharge
 
+  PLAN_AMOUNT = 500
+
   def initialize(subscription)
     @subscription = subscription
   end

@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :subscription do
-    association :user, factory: :user
+    association :user, factory: :subscribed_user
     start_date 2012/11/05
     last_payment_date 2013/12/05
     next_payment_date 2013/01/05
