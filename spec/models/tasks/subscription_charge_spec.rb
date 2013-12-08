@@ -11,12 +11,10 @@ describe Tasks::SubscriptionCharge do
   describe "#charge!" do
     it "should attempt to charge through Stripe" do
       # stub Stripe api call AND expect it to be called with correct values
-      expect(Stripe::Charge).to receive(:create).with(amount: PLAN_AMOUNT, currency: "cad", customer: @subscription.user.card_info)
+      expect(Stripe::Charge).to receive(:create).with(amount: PLAN_AMOUNT, currency: "cad", customer: @subscription.user.card_token)
       @subscription_charge.charge!
     end
 
-    pending "should update the subscription's next_payment_date to same date next month"
-    pending "should update the subscription's last_payment_date to today's date"
     it "should create a payment under the subscription with correct amount and paid_at attributes" do
       allow(Stripe::Charge).to receive(:create) # allow vs expect: allow just stubs the Stripe api call (instead of stubbing + setting expectation)
       # we only need to allow b/c we've tested for the expectation
@@ -27,8 +25,6 @@ describe Tasks::SubscriptionCharge do
 
   end
 
-  pending "uses Stripe to charge the customer"
-  pending "creates a payment for a successful charge"
   pending "updates next_payment_date on successful charge"
   pending "sets last payment date on successful charge"
   pending "does not create a payment on unsuccesful charge"

@@ -54,12 +54,8 @@ describe User do
 
   describe "Credit Card info" do
     it "is valid with all fields properly completed" do
+      @user = FactoryGirl.build :subscribed_user
       expect(@user.save).to eq(true)
-    end
-
-    it "is invalid without card info" do
-      @user = FactoryGirl.build :user, card_info: nil
-      expect(@user.save).to eq(false)
     end
 
     it "is invalid without name on card" do
@@ -81,16 +77,6 @@ describe User do
       @user = FactoryGirl.build :user, card_token: nil
       expect(@user.save).to eq(false)
     end
-
-    # it "fails with invalid entry for expiration month" do
-    #   @user = FactoryGirl.build :user, expiration_month: 13
-    #   expect(@user.save).to eq(false)
-    # end
-
-    # it "fails with invalid entry for expiration year" do
-    #   @user = FactoryGirl.build :user, expiration_year: 98
-    #   expect(@user.save).to eq(false)
-    # end
   end
 
 end
