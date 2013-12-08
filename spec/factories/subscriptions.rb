@@ -9,13 +9,13 @@ FactoryGirl.define do
       last_payment_date { 1.month.ago }
       next_payment_date { Date.today }
     end
-    factory :subscription_charged_this_month do
-      last_payment_date { 10.days.ago }
-      next_payment_date { 10.days.ago.advance(month:1) }
-    end
     factory :subscription_overdue_for_charge do
       last_payment_date { 35.days.ago }
       next_payment_date { 35.days.ago.advance(month: 1) }
+    end
+    factory :subscription_charged_this_month do
+      last_payment_date { 10.days.ago }
+      next_payment_date { 10.days.ago.advance(month:1) }
     end
   end
 end
