@@ -16,9 +16,6 @@ class User < ActiveRecord::Base
     presence: true,
     length: { in: 6..20 }, on: :create
 
-  validates :card_info,
-    presence: true, if: :paid?
-
   validates :name_on_card,
     presence: true, if: :paid?
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131206050729) do
+ActiveRecord::Schema.define(version: 20131208014516) do
 
   create_table "characters", force: true do |t|
     t.string   "name"
@@ -69,7 +69,6 @@ ActiveRecord::Schema.define(version: 20131206050729) do
     t.datetime "updated_at"
     t.boolean  "subscribed"
     t.string   "card_token"
-    t.string   "card_info"
     t.string   "name_on_card"
     t.integer  "expiration_month"
     t.integer  "expiration_year"
