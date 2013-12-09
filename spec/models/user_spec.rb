@@ -59,22 +59,22 @@ describe User do
     end
 
     it "is invalid without name on card" do
-      @user = FactoryGirl.build :user, name_on_card: nil
+      @user = FactoryGirl.build :subscribed_user, name_on_card: nil
       expect(@user.save).to eq(false)
     end
 
     it "is invalid without expiration month" do
-      @user = FactoryGirl.build :user, expiration_month: nil
+      @user = FactoryGirl.build :subscribed_user, expiration_month: nil
       expect(@user.save).to eq(false)
     end
 
     it "is invalid without expiration year" do
-      @user = FactoryGirl.build :user, expiration_year: nil
+      @user = FactoryGirl.build :subscribed_user, expiration_year: nil
       expect(@user.save).to eq(false)
     end
 
     it "is invalid without stripe card token" do
-      @user = FactoryGirl.build :user, card_token: nil
+      @user = FactoryGirl.build :subscribed_user, card_token: nil
       expect(@user.save).to eq(false)
     end
   end

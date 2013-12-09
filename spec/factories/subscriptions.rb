@@ -1,9 +1,9 @@
 FactoryGirl.define do
   factory :subscription do
     association :user, factory: :subscribed_user
-    start_date 2012/11/05
-    last_payment_date 2013/12/05
-    next_payment_date 2013/01/05
+    start_date "2012/11/05"
+    last_payment_date "2013/12/05"
+    next_payment_date "2013/01/05"
     cancel_date nil
     factory :subscription_charged_exactly_one_month_ago do
       last_payment_date { 1.month.ago }
